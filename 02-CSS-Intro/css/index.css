@@ -1,0 +1,50 @@
+h1, h3, h5 {
+    color:seagreen;
+}
+
+h2, h4, h6 {
+    color: purple;
+}
+
+body {
+    color: green;
+}
+
+a {
+    
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: yellow;
+}
+
+a:active {
+    color: orange; 
+}
+
+p.caption {
+    color:slategray;
+}
+
+#sections, #list {
+    text-align: center;
+}
+
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+}
+
+button {
+    color: hotpink;
+}
+
+option {
+    color: hotpink;
+}
