@@ -1,10 +1,35 @@
 h1, h3, h5 {
-    color:seagreen;
+    color: purple;
 }
 
 h2, h4, h6 {
-    color: purple;
+    color: green;
 }
+
+h1 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: rgb(23, 147, 219);
+    padding: 40px;
+    box-shadow: inset -5px -15px rgba(0, 0, 0, .06);
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 50%;
+    animation: wobble 5s ease-in-out infinite;
+    transform-origin: center bottom;
+    transition: padding .3s, bottom .3s;
+    text-align: center;
+  }
+  
+  @keyframes wobble {
+    33% {
+      transform: rotate(5deg);
+    }
+    66% {
+      transform: rotate(-5deg);
+    }
+  }
 
 @keyframes colourchange {
     0%   {background-color: red;}

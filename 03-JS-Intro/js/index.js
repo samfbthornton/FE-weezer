@@ -98,3 +98,41 @@ if (age >= 18 && age <= 65) {
 let newAge = 100;
 let result = newAge >= 50 ? "50 or over" : "Under 50";
 console.log(result);
+
+let person = [{name:"Samuel", age:38, gender:"Male", height:173, weigh:70}];
+
+console.log(person);
+
+for (let p = 0; p < person.length; p++) {
+    for (let key in person[p]) {
+        console.log(`${key} : ${person[p][key]}`);
+    }
+}
+
+let darthVader = {
+    allegiance: "Empire",
+    weapon: "lightsaber",
+    sith: true
+};
+
+console.log(darthVader);
+
+console.log(`Darth Vader's allegiance is to the ${darthVader.allegiance}`);
+console.log(`Darth Vader's weapon of choice is a ${darthVader.weapon}`);
+console.log(`Darth Vader is a sith? ${darthVader.sith}`);
+console.log(`Darth Vader is a Jedi? ${darthVader.sith ? "false" : "true"}`);
+
+//1.
+let myArray = ["hello",'everyone'];
+//2.
+ console.log(myArray.length);
+//3.
+ myArray.push("goodbye");
+//4.
+ console.log(myArray.length);
+//5.
+ myArray.shift();
+//6.
+ for(let eachElement of myArray) {
+     console.log(eachElement);
+ }
