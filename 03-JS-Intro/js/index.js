@@ -85,7 +85,16 @@ console.log(strictA === strictB);
 console.log(strictA != strictB);
 console.log(strictA !== strictB);
 
+let age = 10;
 
-let age = 100;
-let result = age >= 50 ? "50 or over" : "Under 50";
+if (age >= 18 && age <= 65) {
+  console.log("Age is in range");
+} else if (age < 18) {
+  console.log("Underage");
+} else {
+  console.log("Catch all else");
+}
+
+let newAge = 100;
+let result = newAge >= 50 ? "50 or over" : "Under 50";
 console.log(result);
