@@ -8,6 +8,7 @@ h2, h4, h6 {
 
 body {
     color: green;
+    background-image: src="GMTEL_Weezer.jpg";
 }
 
 a {
@@ -28,8 +29,39 @@ a:active {
     color: orange; 
 }
 
+#pic {
+    margin: 40px;    
+    transform: rotate(15deg);
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
 p.caption {
     color:slategray;
+    margin: 40px;    
+    transform: rotate(15deg);
+    animation-name: spin2;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin2 {
+    from {
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0deg);
+    }
 }
 
 #sections, #list {
@@ -45,6 +77,16 @@ button {
     color: hotpink;
 }
 
+#submit {
+    background-color: green;
+}
+
+#reset {
+    background-color: red;
+    color: darkmagenta;
+}
+
 option {
+    background-color: yellow;
     color: hotpink;
 }
