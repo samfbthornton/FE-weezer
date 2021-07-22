@@ -32,6 +32,7 @@ let membersNotWrittenSong = totalMembers - membersWrittenSong;
 
 console.log(`There are ${totalMembers} in Weezer. ${membersWrittenSong} wrote this song, which means ${membersNotWrittenSong} didn't.`);
 
+//loops
 for (let f = 100; f < 201; f++) {
     console.log(`f = ${f}`);
 }
@@ -50,6 +51,7 @@ for (let h = 0; h < 10; h++) {
     }
 }
 
+//switch case
 let now = new Date();
 let day = now.getDay();
 switch (day) {
@@ -136,3 +138,98 @@ let myArray = ["hello",'everyone'];
  for(let eachElement of myArray) {
      console.log(eachElement);
  }
+
+ //scope
+ function submit() {
+     let x = "wee";
+     if (x = "wee") {
+         let y = "zer";
+         console.log(y); //works
+     }
+     console.log(x); //works
+     //console.log(y); //doesn't work - outside brackets
+ }
+ submit();
+
+ //functions
+ function minus(min1,min2){
+     return min1 - min2;
+ }
+ console.log(minus(34,7));
+
+ //function expression
+ const welcome = function(me, age, gender) {
+
+    return console.log(`My name is ${me}, I am ${age} years old and ${gender}`);
+ }
+
+ welcome("Sam", 38, "male");
+
+//lambdas
+let powerUp = (n1, n2) => (n1**n2);
+
+console.log(powerUp(7,3));
+
+//filtering evens
+const nums = [1,2,3,4,5,6,7,8,9,10];
+
+const isEven = num => num % 2 === 0;
+
+const evenNums = nums.filter(isEven);
+
+console.log(evenNums);
+
+//map
+const sqr = num => num * num;
+
+const sqrNums = nums.map(sqr);
+
+console.log(sqrNums);
+
+//grades example
+
+let grades = [
+    {name: 'John', grade: 8, sex: 'M'},
+    {name: 'Sarah', grade: 12, sex: 'F'},
+    {name: 'Bob', grade: 16, sex: 'M'},
+    {name: 'Johnny', grade: 2, sex: 'M'},
+    {name: 'Cyrus', grade: 4, sex: 'M'},
+    {name: 'Paula', grade: 18, sex: 'F'},
+    {name: 'Jeff', grade: 5, sex: 'M'},
+    {name: 'Jennifer', grade: 13, sex: 'F'},
+    {name: 'Courtney', grade: 15, sex: 'F'},
+    {name: 'Jane', grade: 9, sex: 'F'}
+]
+
+let isBoy = student => student.sex === "M";
+let isGirl = student => student.sex === "F";
+
+let getBoys = grades => (grades.filter(isBoy));
+let getGirls = grades => (grades.filter(isGirl));
+
+let average = grades => (grades.reduce((acc,curr) => (acc + curr.grade), 0) / grades.length);
+
+let maxGrade = grades => (Math.max(...grades.map(student => student.grade)));
+let minGrade = grades => (Math.min(...grades.map(student => student.grade)));
+
+//questions
+console.log(grades);
+let highestGrade = maxGrade(grades);
+console.log(`The top grade was: ${highestGrade}/20`);
+let lowestGrade = minGrade(grades);
+console.log(`The bottom grade was: ${lowestGrade}/20`);
+let highestGradeBoys = maxGrade(getBoys(grades));
+console.log(`The top Boys' grade was : ${highestGradeBoys}/20`);
+let highestGradeGirls = maxGrade(getGirls(grades));
+console.log(`The top Girls' grade was: ${highestGradeGirls}/20`);
+let lowestGradeBoys = minGrade(getBoys(grades));
+console.log(`The bottom Boys' grade was: ${lowestGradeBoys}/20`);
+let lowestGradeGirls = minGrade(getGirls(grades));
+console.log(`The bottom Girls' grade was: ${lowestGradeGirls}/20`);
+
+let averageGrade = average(grades);
+console.log(`The average grade was: ${averageGrade}/20`);
+let averageGradeBoys = average(getBoys(grades));
+console.log(`The average Boys' grade was: ${averageGradeBoys}/20`);
+let averageGradeGirls = average(getGirls(grades));
+console.log(`The average Girls' grade was: ${averageGradeGirls}/20`);
